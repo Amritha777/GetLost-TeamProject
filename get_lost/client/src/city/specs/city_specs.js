@@ -21,10 +21,4 @@ describe('city', function() {
     assert.equal( 10.50 , city1.coordinates.lat);
     assert.equal( -66.91, city1.coordinates.lng);
   });
-
-
-
-
-
-
 });
