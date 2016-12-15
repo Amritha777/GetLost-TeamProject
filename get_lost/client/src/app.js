@@ -1,18 +1,28 @@
+var CityTools = require('./city_tools/city_tools');
+
 window.onload = function(){
+  var city1 = new CityTools();
+  var cityUrl = "https://restcountries.eu/rest/v1/all"; 
 
-var url = "https://restcountries.eu/rest/v1/all";
-var select = document.getElementById('country-select');
- 
 
- makeRequest(url, requestComplete);
+  var makeRequest = function(url, callback){
+    var request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.onload = callback;
+    request.send();
+  };
 
-}
+  var cityComplete = function(){
+    if(this.status !==200) return;
+    var jsonString = JSON.parse(this.responseText);
+    var countries = jsonString;
+    console.log(countries);
+    
+    city1.getRandomCity(countries);
+    console.log(city1.getRandomCity(countries))
 
- var makeRequest = function(url, callback) {
-   var request = new XMLHttpRequest();
-   request.open("GET", url);
-   request.onload = callback;
-   request.send();
-   console.log("makeRequest");
- };
+  };
+
+  makeRequest(cityUrl, cityComplete);
+
 }
