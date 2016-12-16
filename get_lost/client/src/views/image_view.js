@@ -1,5 +1,5 @@
-var ImageView = function(data){
-  this.data = data;
+var ImageView = function(city){
+  this.city = city;
   this.imageUrl = "https://api.gettyimages.com/v3/search/images/creative?phrase=cities";
   // this.apiKey = 'tfr7wf2dcnkzf46c5w2wgg53';
 
@@ -16,18 +16,11 @@ ImageView.prototype = {
     request.send();
     },
     
-  imageComplete: function(data){
-    console.log(data)
+  getImageByName: function(data,city){
+    var jsonString = JSON.parse(data.target.responseText);
+  console.log(jsonString);
 
-    // if(this.status !==200) return;
-//         for(var i = 0 ; i< data.images.length; i++)
-//         {
-//            $("#output").append("<img src='" + data.images[i].display_sizes[0].uri + "'/>");
-//         }
-//     })
-// }
-//     .fail(function(data){
-//         alert(JSON.stringify(data,2))
+
   }
 }
 

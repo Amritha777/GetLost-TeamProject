@@ -31,8 +31,10 @@ window.onload = function(){
 
   };    
 
-  var imageview
  
   makeRequest(cityUrl, cityComplete);
-  imageView.imageMakeRequest(imageView.imageUrl, imageView.imageComplete, imageView.apiKey);
+  imageView.imageMakeRequest(imageView.imageUrl, imageView.getImageByName, imageView.apiKey);
+
+
+
 }

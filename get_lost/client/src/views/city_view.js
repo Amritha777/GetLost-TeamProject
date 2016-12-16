@@ -1,8 +1,13 @@
 var CityTools = require('../city_tools/city_tools');
+var ImageView = require('./image_view');
+var city;
 
-var CityView = function(city, countries){
-  this.city = city;
+
+
+var CityView = function(cityTools, countries, image){
+  this.cityTools = cityTools;
   this.countries = countries;
+  this.image = image;
 };
 
 CityView.prototype = {
@@ -15,7 +20,7 @@ CityView.prototype = {
       console.log(this);
 
 
-    var city = this.city.getRandomCity(countries);
+    city = this.cityTools.getRandomCity(countries);
 
       var cityP = document.getElementById('city-name');
       cityP.innerText = city.name;
