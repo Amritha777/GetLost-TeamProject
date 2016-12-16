@@ -7,7 +7,7 @@ window.onload = function(){
   var city1 = new CityTools();
   var cityView = new CityView(city1);
   var imageView = new ImageView();
-
+  
 
 
   var cityUrl = "https://restcountries.eu/rest/v1/all"; 
@@ -25,16 +25,20 @@ window.onload = function(){
     if(this.status !==200) return;
     var jsonString = JSON.parse(this.responseText);
     var countries = jsonString;
+
  
+    cityView.render(countries);
 
-  cityView.render(countries);
-
+  // imageView.getImageByName(displayImage, cityName);
   };    
 
- 
-  makeRequest(cityUrl, cityComplete);
-  imageView.imageMakeRequest(imageView.imageUrl, imageView.getImageByName, imageView.apiKey);
+ var displayImage = function(){
+  this.responseText;
+  var jsonString = JSON.parse(this.responseText)
+  console.log(jsonString);
+ }
 
+  makeRequest(cityUrl, cityComplete);
 
 
 }

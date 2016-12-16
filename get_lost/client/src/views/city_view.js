@@ -1,6 +1,6 @@
 var CityTools = require('../city_tools/city_tools');
 var ImageView = require('./image_view');
-var city;
+
 
 
 
@@ -8,6 +8,7 @@ var CityView = function(cityTools, countries, image){
   this.cityTools = cityTools;
   this.countries = countries;
   this.image = image;
+
 };
 
 CityView.prototype = {
@@ -19,8 +20,8 @@ CityView.prototype = {
       this.clearFunction();
       console.log(this);
 
-
     city = this.cityTools.getRandomCity(countries);
+    
 
       var cityP = document.getElementById('city-name');
       cityP.innerText = city.name;
@@ -42,6 +43,8 @@ CityView.prototype = {
     cityCurrency.innerText = 'Currency: ' + city.currency;
     
     citiesUL.appendChild(cityCurrency);
+
+    return city.name;
 
     }.bind(this);
   },
