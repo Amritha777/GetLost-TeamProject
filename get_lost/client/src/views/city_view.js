@@ -39,7 +39,14 @@ CityView.prototype = {
   },
 
   clearFunction(): function(){
-    var cityCountry
+    var cityCountry = document.getElementById('city-specs');
+   cityCountry.innerHTML = "";
+
+   var cityLang = document.getElementById('city-specs');
+   cityLang.innerHTML = "";
+
+   var cityCurrency = document.getElementById('city-specs');
+   cityCurrency.innerHTML = "";
   }
   
 
