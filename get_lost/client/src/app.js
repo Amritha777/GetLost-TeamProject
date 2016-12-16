@@ -39,6 +39,7 @@ window.onload = function(){
     mapView = new MapView(mapDiv, city);
     var mapDisplayButton = document.getElementById('map-button');
     mapDisplayButton.onclick = function(){
+      console.log(mapView);
       mapView.initMap();
 
     }

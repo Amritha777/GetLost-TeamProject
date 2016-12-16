@@ -15,15 +15,17 @@ MapView.prototype = {
      var service = new google.maps.places.PlacesService(this.map.googleMap);
      service.nearbySearch(
      {
-       location: {lat: this.city.coords[0], lng: this.city.coords[1]},
-       radius: 500,
-       type: ['store']
+       location: 
+       new google.maps.LatLng(this.city.coords[0],this.city.coords[1]),
+        radius: 1000,
+        type: ['restaurant']
      }, this.callback);
-     console.log(service);
+     // console.log(service);
   },
 
 
    callback: function(results, status) {
+    console.log(results);
      if (status === google.maps.places.PlacesServiceStatus.OK) {
        for (var i = 0; i < results.length; i++) {
         console.log(results[i]);
