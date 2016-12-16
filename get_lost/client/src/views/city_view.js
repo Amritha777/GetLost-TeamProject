@@ -10,9 +10,7 @@ var CityView = function(city){
 
 CityView.prototype = {
   render: function(){ 
-
-    var cityDisplayButton = document.getElementById('city-button');
-    cityDisplayButton.onclick = function(){
+  console.log("click");
 
       this.clearFunction();
 
@@ -37,25 +35,12 @@ CityView.prototype = {
 
       citiesUL.appendChild(cityCurrency);
 
-      return this.city.name;
-    }.bind(this);
-    console.log(this);
-  },
+      },
 
   clearFunction: function(){
     var liText = document.querySelector('ul');
-    //console.log(liText);
     liText.innerHTML = "";
-
-   // var cityLang = document.getElementById('city-specs');
-   // cityLang.innerHTML = "";
-
-   // var cityCurrency = document.getElementById('city-specs');
-   // cityCurrency.innerHTML = "";
- }
-
-
-
+  }
 };
 
 module.exports = CityView;
