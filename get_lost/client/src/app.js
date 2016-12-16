@@ -21,8 +21,6 @@ window.onload = function(){
     var jsonString = JSON.parse(this.responseText);
     var countries = jsonString;
  
-  console.log(city1.getRandomCity(countries))
-  console.log(city1.getRandomCity(countries).name)
 
   cityView.render(countries);
 

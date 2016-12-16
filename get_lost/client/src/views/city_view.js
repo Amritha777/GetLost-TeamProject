@@ -14,9 +14,9 @@ CityView.prototype = {
     var citySpecs = document.getElementById('city-specs');
     citySpecs.innerText = this.city.getRandomCity(countries).name;
     }.bind(this)
-    console.log(countries)
-      
+    console.log(countries)   
   }
+  
 
 };
 
