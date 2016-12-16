@@ -1,13 +1,17 @@
 var CityTools = require('./city_tools/city_tools');
 var CityView = require('./views/city_view');
-// var ImageView = require('./views/image_view');
+var ImageView = require('./views/image_view');
 
 
 window.onload = function(){
   var city1 = new CityTools();
   var cityView = new CityView(city1);
+  var imageView = new ImageView();
+
+
 
   var cityUrl = "https://restcountries.eu/rest/v1/all"; 
+
 
 
   var makeRequest = function(url, callback){
@@ -30,5 +34,5 @@ window.onload = function(){
   var imageview
  
   makeRequest(cityUrl, cityComplete);
-  // makeRequest(imageUrl, imageComplete);
+  imageView.imageMakeRequest(imageView.imageUrl, imageView.imageComplete, imageView.apiKey);
 }
