@@ -6,13 +6,13 @@ var MapView = require('./views/map_view');
 
 window.onload = function(){
   var city1 = new CityTools();
-  var cityView = new CityView(city1);
   var imageView = new ImageView();
   var mapDiv = document.getElementById('main-map');
-  var mapView= new MapView(mapDiv);
+  // var mapView = new MapView(mapDiv);
   
 
-
+  var city;
+  var cityView;
   var cityUrl = "https://restcountries.eu/rest/v1/all"; 
 
 
@@ -28,9 +28,10 @@ window.onload = function(){
     if(this.status !==200) return;
     var jsonString = JSON.parse(this.responseText);
     var countries = jsonString;
-
- 
-    cityView.render(countries);
+    city = city1.getRandomCity(countries);
+    console.log(city);
+    cityView = new CityView(city);
+    cityView.render();
 
   // imageView.getImageByName(displayImage, cityName);
   };    
