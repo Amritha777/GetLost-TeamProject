@@ -1,5 +1,6 @@
 var CityTools = require('./city_tools/city_tools');
 var CityView = require('./views/city_view');
+// var ImageView = require('./views/image_view');
 
 
 window.onload = function(){
@@ -25,6 +26,9 @@ window.onload = function(){
   cityView.render(countries);
 
   };    
+
+  var imageview
  
   makeRequest(cityUrl, cityComplete);
+  // makeRequest(imageUrl, imageComplete);
 }
