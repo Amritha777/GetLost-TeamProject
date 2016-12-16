@@ -1,5 +1,5 @@
 var CityTools = function() {
-  this.name = name;
+  // this.name = name;
   // this.language = language;
   // this.currency = currency;
   // this.coordinates = coordinates;
@@ -8,10 +8,14 @@ var CityTools = function() {
 CityTools.prototype = {
   getRandomCity: function(countries){
     var randomNumber = parseInt(Math.random() * (countries.length - 1) + 1);
-    console.log(randomNumber);
-    var randomCity = countries[randomNumber].capital;
-    return randomCity;
-    
+    var randomCity = {
+      name: countries[randomNumber].capital,
+      coords: countries[randomNumber].latlng,
+      language: countries[randomNumber].languages,
+      country: countries[randomNumber].name,
+      currency: countries[randomNumber].currencies
+    }
+    return randomCity;  
   }
 
 }

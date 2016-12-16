@@ -1,7 +1,11 @@
 var CityTools = require('./city_tools/city_tools');
+var CityView = require('./views/city_view');
+
 
 window.onload = function(){
   var city1 = new CityTools();
+  var cityView = new CityView(city1);
+
   var cityUrl = "https://restcountries.eu/rest/v1/all"; 
 
 
@@ -16,13 +20,13 @@ window.onload = function(){
     if(this.status !==200) return;
     var jsonString = JSON.parse(this.responseText);
     var countries = jsonString;
-    console.log(countries);
-    
-    city1.getRandomCity(countries);
-    console.log(city1.getRandomCity(countries))
+ 
+  console.log(city1.getRandomCity(countries))
+  console.log(city1.getRandomCity(countries).name)
 
-  };
+  cityView.render(countries);
 
+  };    
+ 
   makeRequest(cityUrl, cityComplete);
-
 }
