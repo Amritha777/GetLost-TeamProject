@@ -8,17 +8,42 @@ var CityView = function(city, countries){
 CityView.prototype = {
   render: function(countries){ 
 
-
     var cityDisplayButton = document.getElementById('city-button');
     cityDisplayButton.onclick = function(){
-    var citySpecs = document.getElementById('city-specs');
-    citySpecs.innerText = this.city.getRandomCity(countries).name;
+
+    var city = this.city.getRandomCity(countries);
+
+      var cityP = document.getElementById('city-name');
+      cityP.innerText = city.name;
+
+    var cityCountry = document.createElement('li');
+    var citiesUL = document.getElementById('city-specs');
+    cityCountry.innerText = 'Country: ' + city.country;
+    
+    citiesUL.appendChild(cityCountry);
+    
+    var cityLang = document.createElement('li');
+    var citiesUL = document.getElementById('city-specs');
+    cityLang.innerText = 'Language: ' + city.language;
+    
+    citiesUL.appendChild(cityLang);
+
+    var cityCurrency = document.createElement('li');
+    var citiesUL = document.getElementById('city-specs');
+    cityCurrency.innerText = 'Currency: ' + city.currency;
+    
+    citiesUL.appendChild(cityCurrency);
+
     }.bind(this)
-    console.log(countries)   
+    console.log(this)   
+  },
+
+  clearFunction(): function(){
+    var cityCountry
   }
   
+
 
 };
 
 module.exports = CityView;
-  
