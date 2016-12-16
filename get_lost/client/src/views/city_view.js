@@ -11,6 +11,10 @@ CityView.prototype = {
     var cityDisplayButton = document.getElementById('city-button');
     cityDisplayButton.onclick = function(){
 
+      this.clearFunction();
+      console.log(this);
+
+
     var city = this.city.getRandomCity(countries);
 
       var cityP = document.getElementById('city-name');
@@ -34,19 +38,19 @@ CityView.prototype = {
     
     citiesUL.appendChild(cityCurrency);
 
-    }.bind(this)
-    console.log(this)   
+    }.bind(this);
   },
 
-  clearFunction(): function(){
-    var cityCountry = document.getElementById('city-specs');
-   cityCountry.innerHTML = "";
+  clearFunction: function(){
+    var liText = document.querySelector('ul');
+    console.log(liText);
+   liText.innerHTML = "";
 
-   var cityLang = document.getElementById('city-specs');
-   cityLang.innerHTML = "";
+   // var cityLang = document.getElementById('city-specs');
+   // cityLang.innerHTML = "";
 
-   var cityCurrency = document.getElementById('city-specs');
-   cityCurrency.innerHTML = "";
+   // var cityCurrency = document.getElementById('city-specs');
+   // cityCurrency.innerHTML = "";
   }
   
 
