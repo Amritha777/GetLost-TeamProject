@@ -35,10 +35,16 @@ window.onload = function(){
       cityView.city = city;
       cityView.render(city);
 
-      mapView = new MapView(mapDiv, city);
-      console.log(city.coords);
+
+    mapView = new MapView(mapDiv, city);
+    var mapDisplayButton = document.getElementById('map-button');
+    mapDisplayButton.onclick = function(){
+      mapView.initMap();
+
+    }
 
     };
+
 
 
 
@@ -47,11 +53,11 @@ window.onload = function(){
   // imageView.getImageByName(displayImage, city);
   };    
 
- var displayImage = function(){
-  this.responseText;
-  var jsonString = JSON.parse(this.responseText)
-  //console.log(jsonString);
- }
+ // var displayImage = function(){
+ //  this.responseText;
+ //  var jsonString = JSON.parse(this.responseText)
+ //  //console.log(jsonString);
+ // }
 
   makeRequest(cityUrl, cityComplete);
 
