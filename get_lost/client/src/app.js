@@ -8,7 +8,7 @@ window.onload = function(){
   var city1 = new CityTools();
   var imageView = new ImageView();
   var mapDiv = document.getElementById('main-map');
-  // var mapView = new MapView(mapDiv);
+  var mapView;
   
 
   var city;
@@ -35,15 +35,16 @@ window.onload = function(){
       cityView.city = city;
       cityView.render(city);
 
+      mapView = new MapView(mapDiv, city);
+      console.log(city.coords);
 
     };
 
 
 
 
-    // cityView.render(city);
 
-  // imageView.getImageByName(displayImage, cityName);
+  // imageView.getImageByName(displayImage, city);
   };    
 
  var displayImage = function(){
