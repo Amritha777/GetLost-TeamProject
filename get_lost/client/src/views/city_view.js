@@ -18,7 +18,7 @@ CityView.prototype = {
     cityDisplayButton.onclick = function(){
 
       this.clearFunction();
-      console.log(this);
+      //console.log(this);
 
     city = this.cityTools.getRandomCity(countries);
     
@@ -51,7 +51,7 @@ CityView.prototype = {
 
   clearFunction: function(){
     var liText = document.querySelector('ul');
-    console.log(liText);
+    //console.log(liText);
    liText.innerHTML = "";
 
    // var cityLang = document.getElementById('city-specs');
