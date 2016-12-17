@@ -37,7 +37,7 @@ MapView.prototype = {
 
 
   getPlaces: function(){
-      console.log(this);
+    console.log(this);
      var request = {
       location: 
       new google.maps.LatLng(this.newCoords[0],this.newCoords[1]),
@@ -47,14 +47,22 @@ MapView.prototype = {
 
     var service = new google.maps.places.PlacesService(this.map.googleMap);
     
-    service.textSearch(request, this.placesCallback); 
-    }.bind(this),
+    service.textSearch(request, 
+      function(results, status){
+            console.log(this)
 
-    placesCallback: function(results, status){
-      for (var i = 0; i < results.length; i++) {      
-      this.map.createMarker(results[i]);
-      }
+            for (var i = 0; i < results.length; i++) {      
+            this.map.createMarker(results[i])
+            }
+
+
+
+          }.bind(this));
+
+
+    
     }.bind(this)
+
 };
 
 
