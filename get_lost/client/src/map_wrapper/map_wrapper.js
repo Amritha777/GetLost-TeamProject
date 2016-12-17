@@ -12,18 +12,18 @@ MapWrapper.prototype = {
 
  createMarker: function(place){
    var marker = new google.maps.Marker({
-     position: place.geometry.location,
+     position: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()},
      map: this.googleMap
    });
    console.log(marker)
  },
 
- addClickEvent: function(){
-   google.maps.event.addListener(this.googleMap, 'click', function(event){
-     var position = event.latLng;
-     this.addMarker(position);
-   }.bind(this))
- }
+ // addClickEvent: function(){
+ //   google.maps.event.addListener(this.googleMap, 'click', function(event){
+ //     var position = event.latLng;
+ //     this.addMarker(position);
+ //   }.bind(this))
+ // }
 }
 
 module.exports = MapWrapper;

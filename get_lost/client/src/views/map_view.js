@@ -35,7 +35,7 @@ MapView.prototype = {
       location: 
       new google.maps.LatLng(this.city.coords[0],this.city.coords[1]),
       radius: "1000",
-      query: 'bars'
+      query: 'restaurant'
     };
 
     var service = new google.maps.places.PlacesService(this.map.googleMap);
