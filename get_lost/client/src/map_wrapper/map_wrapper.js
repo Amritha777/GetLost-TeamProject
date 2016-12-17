@@ -4,8 +4,7 @@ var MapWrapper = function(container, center, zoom){
  {
    center: center,
    zoom: zoom
- }
- );
+ });
 }
 
 MapWrapper.prototype = {

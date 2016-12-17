@@ -38,17 +38,15 @@ window.onload = function(){
       mapView = new MapView(mapDiv, city, 6);
       var mapDisplayButton = document.getElementById('map-button');
       mapDisplayButton.onclick = function(){
-      mapView.initMap();
-    }
+        mapView.initMap();
+      }
       
       var placesButton = document.getElementById('places-button')
-        placesButton.onclick = function(){
-          mapView.getPlaces();
+      placesButton.onclick = function(){
+        mapView.getPlaces();
       }
     };
-
   }
-
 
  // var displayImage = function(){
  //  this.responseText;
@@ -57,6 +55,4 @@ window.onload = function(){
  // }
 
  makeRequest(cityUrl, cityComplete);
-
-
 }
