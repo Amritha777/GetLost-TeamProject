@@ -29,18 +29,18 @@ MapView.prototype = {
     this.map = new MapWrapper(document.getElementById('main-map'), results[0].geometry.location, 12);
     
     this.newCoords = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];
-    
+
    
     
     }
   }.bind(this),
 
 
-  getPlaces: function(newCoords){
+  getPlaces: function(){
       console.log(this);
      var request = {
       location: 
-      new google.maps.LatLng(newCoords[0],newCoords[1]),
+      new google.maps.LatLng(this.newCoords[0],this.newCoords[1]),
       radius: "1000",
       query: 'restaurant'
     };

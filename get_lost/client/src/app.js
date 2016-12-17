@@ -35,18 +35,20 @@ window.onload = function(){
 
       // imageView.getImageByName(displayImage, city);
 
-
       mapView = new MapView(mapDiv, city, 6);
-
       var mapDisplayButton = document.getElementById('map-button');
       mapDisplayButton.onclick = function(){
-        
-      //console.log(mapView.initMap());
+      mapView.initMap();
+    }
       
-              
+      var placesButton = document.getElementById('places-button')
+        placesButton.onclick = function(){
+          mapView.getPlaces();
       }
     };
-  };    
+
+  }
+
 
  // var displayImage = function(){
  //  this.responseText;
@@ -55,13 +57,6 @@ window.onload = function(){
  // }
 
  makeRequest(cityUrl, cityComplete);
-
-
-
-
-
-
-
 
 
 }
