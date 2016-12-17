@@ -41,6 +41,7 @@ window.onload = function(){
       mapDisplayButton.onclick = function(){
         console.log(mapView);
         mapView.initMap();
+        mapView.getPlaces();      
       }
     };
   };    

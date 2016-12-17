@@ -10,12 +10,13 @@ var MapWrapper = function(container, center, zoom){
 
 MapWrapper.prototype = {
 
- createMarker: function(coords){
-   var marker = new google.maps.Marker({
-     position: coords,
-     map: this.googleMap
-   })
- },
+ createMarker: function(){
+ //   var marker = new google.maps.Marker({
+ //     position: coords,
+ //     map: this.googleMap
+ console.log("hallo");
+   }
+ }
 
  // addClickEvent: function(){
  //   google.maps.event.addListener(this.googleMap, 'click', function(event){
@@ -24,7 +25,6 @@ MapWrapper.prototype = {
  //     this.addMarker(position);
  //   }.bind(this))
  // }
-},
 //  }
 
 module.exports = MapWrapper;
