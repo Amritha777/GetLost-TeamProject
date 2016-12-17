@@ -15,7 +15,7 @@ ImageView.prototype = {
 
   var request = new XMLHttpRequest();
   request.open("GET", this.imageUrl + cityName); 
-  // console.log(this.imageUrl + cityName)
+  console.log(this.imageUrl + cityName)
   request.setRequestHeader("Api-Key", 'tfr7wf2dcnkzf46c5w2wgg53');
   request.onload = callback;
   request.send();

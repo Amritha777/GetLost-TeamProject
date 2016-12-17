@@ -35,23 +35,19 @@ window.onload = function(){
       cityView.city = city;
       cityView.render(city);
 
+      // imageView.getImageByName(displayImage, city);
 
-    mapView = new MapView(mapDiv, city);
+
+    mapView = new MapView(mapDiv, city, 6);
     var mapDisplayButton = document.getElementById('map-button');
     mapDisplayButton.onclick = function(){
-      console.log(mapView);
+      mapView = new MapView(mapDiv, city, 8);
+      console.log(mapView.zoom);
       mapView.initMap();
 
     }
 
     };
-
-
-
-
-
-
-  // imageView.getImageByName(displayImage, city);
   };    
 
  // var displayImage = function(){
