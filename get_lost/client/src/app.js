@@ -38,11 +38,11 @@ window.onload = function(){
       // imageView.getImageByName(displayImage, city);
 
 
-    mapView = new MapView(mapDiv, city, 6);
+    // mapView = new MapView(mapDiv, city, 6);
     var mapDisplayButton = document.getElementById('map-button');
     mapDisplayButton.onclick = function(){
-      mapView = new MapView(mapDiv, city, 8);
-      console.log(mapView.zoom);
+      mapView = new MapView(mapDiv, city, 10);
+      console.log(mapView);
       mapView.initMap();
 
     }

@@ -11,28 +11,36 @@ MapView.prototype = {
     initMap: function(event){
    
      infowindow = new google.maps.InfoWindow();
+
+     var request = {
+      location: 
+      new google.maps.LatLng(this.city.coords[0],this.city.coords[1]),
+       radius: "1000",
+       query: this.city.name
+     };
     
      var service = new google.maps.places.PlacesService(this.map.googleMap);
-     service.nearbySearch(
-     {
-       location: 
-       new google.maps.LatLng(this.city.coords[0],this.city.coords[1]),
-        radius: 50000,
-        type: ['bar']
-     }, this.callback);
-     // console.log(service);
+     service.textSearch(request, this.callback); 
+     
+
   },
 
 
    callback: function(results, status) {
-    console.log(results);
+   
+
      if (status === google.maps.places.PlacesServiceStatus.OK) {
+    console.log(this)
+      this.map = new MapWrapper(container, results[0].geometry.location, zoom);
+
        for (var i = 0; i < results.length; i++) {
         console.log(results[i]);
          createMarker(results[i]);
        }
      }
-   }
+    
+
+   }.bind(this)
 
   //  function createMarker(place) {
   //    var placeLoc = place.geometry.location;
