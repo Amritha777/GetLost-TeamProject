@@ -44,12 +44,12 @@ MapView.prototype = {
     },
 
     placesCallback: function(results, status){
-      console.log(results)
+      for (var i = 0; i < results.length; i++) {      
+      this.map.createMarker(results[i]);
+      }
+    }.bind(this)
+};
 
-    }
-
-
-  };
 
   //  function createMarker(place) {
   //    var placeLoc = place.geometry.location;
