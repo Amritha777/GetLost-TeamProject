@@ -37,11 +37,13 @@ window.onload = function(){
 
 
       mapView = new MapView(mapDiv, city, 6);
+
       var mapDisplayButton = document.getElementById('map-button');
       mapDisplayButton.onclick = function(){
-        console.log(mapView);
-        mapView.initMap();
-        mapView.getPlaces();      
+        
+      //console.log(mapView.initMap());
+      
+              
       }
     };
   };    
