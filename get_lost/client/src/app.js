@@ -15,8 +15,6 @@ window.onload = function(){
   var cityView = new CityView();
   var cityUrl = "https://restcountries.eu/rest/v1/all"; 
 
-
-
   var makeRequest = function(url, callback){
     var request = new XMLHttpRequest();
     request.open("GET", url);
@@ -38,15 +36,12 @@ window.onload = function(){
       // imageView.getImageByName(displayImage, city);
 
 
-    // mapView = new MapView(mapDiv, city, 6);
-    var mapDisplayButton = document.getElementById('map-button');
-    mapDisplayButton.onclick = function(){
-      mapView = new MapView(mapDiv, city, 10);
-      console.log(mapView);
-      mapView.initMap();
-
-    }
-
+      mapView = new MapView(mapDiv, city, 6);
+      var mapDisplayButton = document.getElementById('map-button');
+      mapDisplayButton.onclick = function(){
+        console.log(mapView);
+        mapView.initMap();
+      }
     };
   };    
 
@@ -56,7 +51,7 @@ window.onload = function(){
  //  //console.log(jsonString);
  // }
 
-  makeRequest(cityUrl, cityComplete);
+ makeRequest(cityUrl, cityComplete);
 
 
 
