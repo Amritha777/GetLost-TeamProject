@@ -26,8 +26,7 @@ MapView.prototype = {
 
 callback: function(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
-    this.map = new MapWrapper(document.getElementById('main-map'), results[0].geometry.location, 12);
-
+    this.map = new MapWrapper(document.getElementById('main-map'), results[0].geometry.location, 14);
     this.newCoords = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];  
   }
 }.bind(this),
@@ -36,7 +35,7 @@ getPlaces: function(){
   var request = {
     location: 
     new google.maps.LatLng(this.newCoords[0],this.newCoords[1]),
-    radius: "1000",
+    radius: "600",
     query: 'restaurant'
   };
 
