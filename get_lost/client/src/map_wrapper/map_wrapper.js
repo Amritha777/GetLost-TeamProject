@@ -9,7 +9,6 @@ var MapWrapper = function(container, center, zoom){
 
 MapWrapper.prototype = {
 
-
  createMarker: function(place){
    var marker = new google.maps.Marker({
      position: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()},
@@ -18,12 +17,11 @@ MapWrapper.prototype = {
    this.markers.push(marker);
  },
 
-clearMarkers: function(){
-  for(i=0; i < this.markers.length; i++){
-    this.markers[i].setMap(null);
+  clearMarkers: function(){
+    for(i=0; i < this.markers.length; i++){
+      this.markers[i].setMap(null);
+    }
   }
-}
-
-}
+};
 
 module.exports = MapWrapper;

@@ -24,40 +24,39 @@ MapView.prototype = {
   service.textSearch(request, this.callback); 
 },
 
-callback: function(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    this.map = new MapWrapper(document.getElementById('main-map'), results[0].geometry.location, 14);
-    this.newCoords = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];  
-  }
-}.bind(this),
-
-getPlaces: function(){
-  this.map.clearMarkers();
-  
-  var input = document.getElementById('place-input').value;
-
-  var request = {
-    location: 
-    new google.maps.LatLng(this.newCoords[0],this.newCoords[1]),
-    radius: "600",
-    query: input
-  };
-  console.log(input)
-
-  var service = new google.maps.places.PlacesService(this.map.googleMap);
-
-  service.textSearch(request, 
-    function(results, status){
-      for (var i = 0; i < results.length; i++) {      
-        this.map.createMarker(results[i])
-      }
-    console.log(results)
-    }.bind(this));
+  callback: function(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      this.map = new MapWrapper(document.getElementById('main-map'), results[0].geometry.location, 14);
+     this.newCoords = [results[0].geometry.location.lat(), results[0].geometry.location.lng()];  
+    }
   }.bind(this),
 
+  getPlaces: function(){
+   this.map.clearMarkers();
+
+    var input = document.getElementById('place-input').value;
+
+    var request = {
+     location: 
+     new google.maps.LatLng(this.newCoords[0],this.newCoords[1]),
+      radius: "600",
+     query: input
+    };
+    console.log(input)
+
+    var service = new google.maps.places.PlacesService(this.map.googleMap);
+
+    service.textSearch(request, 
+      function(results, status){
+        for (var i = 0; i < results.length; i++) {      
+        this.map.createMarker(results[i])
+        }
+      console.log(results)
+      }.bind(this));
+  }.bind(this),
 }
 
-  
+
   //  function createMarker(place) {
   //    var placeLoc = place.geometry.location;
   //    var marker = new google.maps.Marker({
