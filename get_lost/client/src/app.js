@@ -45,6 +45,11 @@ window.onload = function(){
       placesButton.onclick = function(){
         mapView.getPlaces();
       }
+
+      // var placesButton = document.getElementById('search-button')
+      // placesButton.onclick = function(){
+      //   mapView.initSearch();
+      // }
     };
   }
 
