@@ -30,7 +30,7 @@ MapView.prototype = {
   }.bind(this),
 
 
-  getPlaces: function(event){
+  getPlaces: function(event, initMap){
      var request = {
       location: 
       new google.maps.LatLng(this.city.coords[0],this.city.coords[1]),
