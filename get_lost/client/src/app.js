@@ -26,7 +26,8 @@ window.onload = function(){
 
   var fetchResults = function(results){
     listView.places = results;
-    listView.render();
+    // listView.render();
+   
   }
 
   var cityComplete = function(){

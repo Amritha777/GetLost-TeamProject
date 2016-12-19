@@ -1,5 +1,6 @@
 var MapWrapper = function(container, center, zoom){
   this.markers = [];
+  this.selectedPlaces = [];
   this.googleMap = new google.maps.Map(container,
  {
    center: center,
@@ -22,16 +23,30 @@ MapWrapper.prototype = {
        infowindow.open(this.googleMap, marker);
      });
 
-   marker.addListener('mouseout',function(){
+  marker.addListener('mouseout',function(){
     infowindow.close();
    });
 
   marker.addListener('click', function(event){
-    console.log(event);
-    // place.name
-  })
-
+    this.selectedPlaces.push(place)
+    this.renderSelectedPlaces();
+  }.bind(this))
  },
+
+ renderSelectedPlaces:function() {
+  for(place of this.selectedPlaces){
+    console.log(place);
+   this.addPlace(place);   
+  }
+ },
+
+ addPlace:function(item) {
+   var ul = document.getElementById('places-list');
+   var place = document.createElement("li");
+   place.innerHTML = item.types[0] +": "+ item.name;
+   ul.appendChild(place);
+ },
+
 
   clearMarkers: function(){
     for(i=0; i < this.markers.length; i++){
