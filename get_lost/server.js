@@ -29,7 +29,7 @@ app.post('/cities', function(req, res){
     collection.insert(
     {
       name: req.body.name,
-      places: req.body.places
+      places: req.body.selectedPlaces
     }
     )
     res.status(200).end();
