@@ -41,6 +41,7 @@ MapView.prototype = {
      new google.maps.LatLng(this.newCoords[0],this.newCoords[1]),
       radius: "600",
      query: input
+
     };
     console.log(input)
 
