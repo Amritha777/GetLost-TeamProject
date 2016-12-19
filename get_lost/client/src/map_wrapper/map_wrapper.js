@@ -56,7 +56,8 @@ MapWrapper.prototype = {
     request.open("POST", url);
     request.setRequestHeader('content-type', 'application/json');
     request.onload = callback;
-    request.send(JSON.stringify(this.selectedPlaces));
+    var data = {name: document.getElementById('city-name').innerText, places: this.selectedPlaces};
+    request.send(JSON.stringify(data));
   console.log(this)
   },
 
