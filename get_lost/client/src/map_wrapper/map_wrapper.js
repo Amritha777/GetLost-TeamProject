@@ -28,8 +28,11 @@ MapWrapper.prototype = {
    });
 
   marker.addListener('click', function(event){
-    this.selectedPlaces.push(place)
-    this.addPlace(place);
+
+    if(!this.selectedPlaces.includes(place)){
+      this.selectedPlaces.push(place);
+      this.addPlace(place);
+    } 
   }.bind(this))
  },
 
@@ -39,8 +42,7 @@ MapWrapper.prototype = {
    place.innerHTML = item.types[0] +": "+ item.name;
    ul.appendChild(place);
  },
-
-
+ 
   clearMarkers: function(){
     for(i=0; i < this.markers.length; i++){
       this.markers[i].setMap(null);
