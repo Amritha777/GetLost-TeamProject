@@ -29,15 +29,8 @@ MapWrapper.prototype = {
 
   marker.addListener('click', function(event){
     this.selectedPlaces.push(place)
-    this.renderSelectedPlaces();
+    this.addPlace(place);
   }.bind(this))
- },
-
- renderSelectedPlaces:function() {
-  for(place of this.selectedPlaces){
-    console.log(place);
-   this.addPlace(place);   
-  }
  },
 
  addPlace:function(item) {
