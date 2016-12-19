@@ -1,3 +1,5 @@
+var List = require('./list/list');
+
 var ListsView = function(listItem) {
     this.listItem= listItem;
     this.onChange = undefined;

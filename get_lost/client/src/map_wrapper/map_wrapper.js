@@ -17,6 +17,7 @@ MapWrapper.prototype = {
    });
 
    this.markers.push(marker);
+   console.log(marker);
 
  
    var infowindow = new google.maps.InfoWindow({content: place.name});

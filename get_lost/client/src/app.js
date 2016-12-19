@@ -14,6 +14,7 @@ window.onload = function(){
   var city;
   var cityView = new CityView();
   var cityUrl = "https://restcountries.eu/rest/v1/all"; 
+  var listView = new ListView();
 
   var makeRequest = function(url, callback){
     var request = new XMLHttpRequest();
@@ -43,8 +44,11 @@ window.onload = function(){
       
       var placesButton = document.getElementById('places-button')
       placesButton.onclick = function(){
-        mapView.getPlaces();
+        var places = mapView.getPlaces();
+        return places;
       }
+
+      listView.render(places);
 
     };
   }
