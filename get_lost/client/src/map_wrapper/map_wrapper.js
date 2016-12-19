@@ -11,25 +11,25 @@ MapWrapper.prototype = {
 
  createMarker: function(place){
 
-   var marker = new google.maps.Marker({
+  var marker = new google.maps.Marker({
      position: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()},
      map: this.googleMap
    });
-
    this.markers.push(marker);
-   // console.log(marker);
-
- 
-   var infowindow = new google.maps.InfoWindow({content: place.name});
-
-   marker.addListener('mouseover', function() {
-        
+    
+  var infowindow = new google.maps.InfoWindow({content: place.name});
+     marker.addListener('mouseover', function() {      
        infowindow.open(this.googleMap, marker);
      });
 
    marker.addListener('mouseout',function(){
     infowindow.close();
    });
+
+  marker.addListener('click', function(event){
+    console.log(event);
+    // place.name
+  })
 
  },
 
@@ -41,3 +41,6 @@ MapWrapper.prototype = {
 };
 
 module.exports = MapWrapper;
+
+
+

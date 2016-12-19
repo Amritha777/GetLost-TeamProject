@@ -6,12 +6,9 @@ var ListView = function() {
 
 ListView.prototype = {
 
-
-
   render:function() {
    for(place of this.places){
-    this.addItem(place);
-   
+    this.addItem(place);   
    }
   },
 
