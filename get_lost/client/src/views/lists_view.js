@@ -1,26 +1,23 @@
-var List = require('./list/list');
+var List = require('../list/list');
 
-var ListsView = function(listItem) {
-    this.listItem= listItem;
-    this.onChange = undefined;
-    this.items = [];
+var ListView = function() {
+    this.places;
   };
 
-  ListsView.prototype = {
-    render:function(place) {
-      this.listItem.innerHTML = "";
-      this.items = items;
-      this.items.forEach(function(item) {
-        this.addItem(item);
-      }.bind(this));
-    },
-    addItem:function(item, index) {
-      var li = document.createElement("li");
-      li.innerHTML = item.name;
-      this.listElement.appendChild(li);
-    },
-  };
+ListView.prototype = {
+  render:function() {
+   for(place of this.places){
+    this.addItem(place);
+   console.log(this);
+   }
+  },
 
-  module.exports = ListsView;
+  addItem:function(item) {
+    var ul = document.getElementById('places-list');
+    var place = document.createElement("li");
+    place.innerHTML = item[0].type + item.name;
+    ul.appendChild(place);
+  },
+};
 
-}
+  module.exports = ListView;

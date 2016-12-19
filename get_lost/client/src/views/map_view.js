@@ -31,7 +31,7 @@ MapView.prototype = {
     }
   }.bind(this),
 
-  getPlaces: function(){
+  getPlaces: function(fetchResults){
    this.map.clearMarkers();
 
     var input = document.getElementById('place-input').value;
@@ -52,6 +52,7 @@ MapView.prototype = {
         for (var i = 0; i < results.length; i++) {      
         this.map.createMarker(results[i])
         }
+        fetchResults(results);
       console.log(results)
       }.bind(this));
   }.bind(this),

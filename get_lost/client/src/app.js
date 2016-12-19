@@ -2,6 +2,7 @@ var CityTools = require('./city_tools/city_tools');
 var CityView = require('./views/city_view');
 var ImageView = require('./views/image_view');
 var MapView = require('./views/map_view');
+var ListView = require('./views/lists_view');
 
 
 window.onload = function(){
@@ -22,6 +23,10 @@ window.onload = function(){
     request.onload = callback;
     request.send();
   };
+
+  var fetchResults = function(results){
+    console.log(results)
+  }
 
   var cityComplete = function(){
     if(this.status !==200) return;
@@ -44,11 +49,10 @@ window.onload = function(){
       
       var placesButton = document.getElementById('places-button')
       placesButton.onclick = function(){
-        var places = mapView.getPlaces();
-        return places;
+        mapView.getPlaces(fetchResults);
+        
+        listView.render();
       }
-
-      listView.render(places);
 
     };
   }
