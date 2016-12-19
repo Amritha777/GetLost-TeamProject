@@ -27,7 +27,7 @@ window.onload = function(){
   var fetchResults = function(results){
     listView.places = results;
     // listView.render();
-   
+
   }
 
   var cityComplete = function(){
@@ -58,12 +58,6 @@ window.onload = function(){
 
     };
   }
-
- // var displayImage = function(){
- //  this.responseText;
- //  var jsonString = JSON.parse(this.responseText)
- //  //console.log(jsonString);
- // }
-
+  
  makeRequest(cityUrl, cityComplete);
 }

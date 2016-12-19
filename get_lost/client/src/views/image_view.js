@@ -9,8 +9,7 @@ var ImageView = function(city){
 ImageView.prototype = {
   
   // imageMakeRequest: function(url, callback, apiKey){
-  
-    
+     
   getImageByName: function(callback, cityName){
 
   var request = new XMLHttpRequest();
