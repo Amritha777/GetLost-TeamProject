@@ -10,7 +10,7 @@ window.onload = function(){
   var imageView = new ImageView();
   var mapDiv = document.getElementById('main-map');
   var mapView;
-  
+  var localUrl = "http://localhost:3000/cities";
 
   var city;
   var cityView = new CityView();
@@ -51,12 +51,26 @@ window.onload = function(){
       
       var placesButton = document.getElementById('places-button')
       placesButton.onclick = function(){
-        mapView.getPlaces(fetchResults);
-        
-       
+        mapView.getPlaces(fetchResults); 
       }
 
+
+
     };
+     var saveCityList = function(url, callback){
+       var request = new XMLHttpRequest();
+       request.open("POST", url);
+       
+       request.onload = callback;
+       request.send();
+     };
+
+     var boomButton = document. getElementById('save-button')
+     boomButton.onclick = function (){
+       saveCityList(localUrl, console.log("ok"))
+     };
+
+
   }
   
  makeRequest(cityUrl, cityComplete);
