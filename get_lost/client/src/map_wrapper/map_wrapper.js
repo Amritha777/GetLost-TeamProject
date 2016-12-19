@@ -6,6 +6,8 @@ var MapWrapper = function(container, center, zoom){
    center: center,
    zoom: zoom
  });
+  this.initSave = this.initSave.bind(this);
+  this.initSave();
 }
 
 MapWrapper.prototype = {
@@ -32,6 +34,7 @@ MapWrapper.prototype = {
       this.selectedPlaces.push(place);
       this.addPlace(place);
     } 
+    console.log(this.selectedPlaces);
   }.bind(this))
  },
 
@@ -46,8 +49,26 @@ MapWrapper.prototype = {
     for(i=0; i < this.markers.length; i++){
       this.markers[i].setMap(null);
     }
+  },
+
+  saveCityList: function(url, callback){
+    var request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.setRequestHeader('content-type', 'application/json');
+    request.onload = callback;
+    request.send(JSON.stringify(this.selectedPlaces));
+  console.log(this)
+  },
+
+  initSave: function (){
+    var localUrl = "http://localhost:3000/cities";
+    var boomButton = document.getElementById('save-button')
+    boomButton.onclick = function (){
+      this.saveCityList(localUrl, console.log("ok"))
+    }.bind(this);
+  console.log(this);
   }
-};
+}
 
 module.exports = MapWrapper;
 
