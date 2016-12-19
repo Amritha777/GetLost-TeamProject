@@ -10,10 +10,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
-app.get('/accounts', function (req, res) {
- var url = "mongodb://localhost:27017/bank";
+app.get('/cities', function (req, res) {
+ var url = "mongodb://localhost:27017/cities";
  MongoClient.connect(url, function(err, db){
-  var collection = db.collection('accounts');
+  var collection = db.collection('cities');
   collection.find({}).toArray(function(err, docs){
     res.json(docs);
     db.close();
@@ -22,15 +22,14 @@ app.get('/accounts', function (req, res) {
 })
 
 
-app.post('/accounts', function(req, res){
-  var url = "mongodb://localhost:27017/bank";
+app.post('/cities', function(req, res){
+  var url = "mongodb://localhost:27017/cities";
   MongoClient.connect(url, function(err,db){
-    var collection = db.collection('accounts');
+    var collection = db.collection('cities');
     collection.insert(
     {
-      "owner": req.body.owner,
-      "amount": req.body.amount,
-      "type": req.body.type
+      name: req.body.name,
+      places: req.body.places
     }
     )
     res.status(200).end();
