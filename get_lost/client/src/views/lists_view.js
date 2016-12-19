@@ -5,17 +5,21 @@ var ListView = function() {
   };
 
 ListView.prototype = {
+
+
+
   render:function() {
    for(place of this.places){
     this.addItem(place);
-   console.log(this);
+   
    }
   },
 
   addItem:function(item) {
     var ul = document.getElementById('places-list');
     var place = document.createElement("li");
-    place.innerHTML = item[0].type + item.name;
+    //console.log(item);
+    place.innerHTML = item.types[0] +" "+ item.name;
     ul.appendChild(place);
   },
 };

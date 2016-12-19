@@ -53,7 +53,7 @@ MapView.prototype = {
         this.map.createMarker(results[i])
         }
         fetchResults(results);
-      console.log(results)
+      
       }.bind(this));
   }.bind(this),
 }

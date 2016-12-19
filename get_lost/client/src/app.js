@@ -25,7 +25,8 @@ window.onload = function(){
   };
 
   var fetchResults = function(results){
-    console.log(results)
+    listView.places = results;
+    listView.render();
   }
 
   var cityComplete = function(){
@@ -51,7 +52,7 @@ window.onload = function(){
       placesButton.onclick = function(){
         mapView.getPlaces(fetchResults);
         
-        listView.render();
+       
       }
 
     };
