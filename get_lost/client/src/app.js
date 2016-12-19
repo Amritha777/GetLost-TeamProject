@@ -26,8 +26,6 @@ window.onload = function(){
 
   var fetchResults = function(results){
     listView.places = results;
-    // listView.render();
-
   }
 
   var cityComplete = function(){
@@ -48,22 +46,22 @@ window.onload = function(){
       mapDisplayButton.onclick = function(){
         mapView.initMap();
       }
-      
+
       var placesButton = document.getElementById('places-button')
       placesButton.onclick = function(){
         mapView.getPlaces(fetchResults); 
       }
-
-
-
     };
+
      var saveCityList = function(url, callback){
        var request = new XMLHttpRequest();
        request.open("POST", url);
-       
+       request.setRequestHeader('content-type', 'application/json');
        request.onload = callback;
-       request.send();
-     };
+       console.log(mapView)
+       request.send(JSON.stringify());
+     }.bind(this);
+
 
      var boomButton = document. getElementById('save-button')
      boomButton.onclick = function (){

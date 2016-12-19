@@ -7,12 +7,6 @@ var ListView = function() {
 
 ListView.prototype = {
 
-  render:function() {
-   for(place of this.places){
-    this.addItem(place);   
-   }
-  },
-
   addItem:function(item) {
     var ul = document.getElementById('places-list');
     var place = document.createElement("li");

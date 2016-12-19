@@ -28,7 +28,6 @@ MapWrapper.prototype = {
    });
 
   marker.addListener('click', function(event){
-
     if(!this.selectedPlaces.includes(place)){
       this.selectedPlaces.push(place);
       this.addPlace(place);
