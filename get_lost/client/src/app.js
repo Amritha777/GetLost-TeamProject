@@ -48,7 +48,18 @@ window.onload = function(){
       placesButton.onclick = function(){
         mapView.getPlaces(fetchResults); 
       }
+
+
     };
+
+
+
+  // for(city of citiesLI){
+
+  //   city.onclick = function(){
+  //     console.log("click");
+  //   };
+  // }
 
     
 
