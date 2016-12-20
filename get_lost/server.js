@@ -24,6 +24,7 @@ app.get('/cities', function (req, res) {
 
 app.post('/cities', function(req, res){
   var url = "mongodb://localhost:27017/cities";
+  console.log(req.body)
   MongoClient.connect(url, function(err,db){
     var collection = db.collection('cities');
     
