@@ -71,8 +71,12 @@ MapWrapper.prototype = {
     boomButton.onclick = function (){
       this.saveCityList(localUrl, function(response){
         var data = JSON.parse(response);
+        var todoDiv = document.getElementById('todo-list');
+
         for(city of data){
-          console.log(city.name);
+          var todoLI = document.createElement('li');
+          todoLI.innerText = city.name;
+          todoDiv.appendChild(todoLI);
         }
       });
     }.bind(this);
