@@ -6,7 +6,6 @@ body{
 #container{
   display: none;
   flex-direction: row;
-  justify-content: center;
 }
 
 #wandering-list{
@@ -24,6 +23,23 @@ body{
   background: transparent  no-repeat center;
 }
 
+#map-button {
+  border: none;
+  outline: none;
+  background:transparent no-repeat 0 0
+}
+
+#try-again {
+  border: none;
+  outline: none;
+  background:transparent no-repeat 0 0
+}
+
+#save-button{
+  border: none;
+  outline: none;
+  background:transparent no-repeat 0 0;
+}
 
 h4{
   font-family: 'Baloo Thambi', cursive;
