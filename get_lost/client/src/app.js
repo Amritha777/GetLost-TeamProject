@@ -36,7 +36,7 @@ window.onload = function(){
     cityDisplayButton.onclick = function(){
       city = city1.getRandomCity(countries);
       cityView.city = city;
-      cityView.render(city);
+      cityView.render(city); 
 
       mapView = new MapView(mapDiv, city, 6);
       var mapDisplayButton = document.getElementById('map-button');
