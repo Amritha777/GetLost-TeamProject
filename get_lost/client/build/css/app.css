@@ -1,19 +1,12 @@
-.header-logo {
+#city-button {
   display: block;
   margin: 0 auto;
   width: 800px;
   height: 800px;
-  background: url(../img/GetLost_logo.png) no-repeat center;
+  background: transparent no-repeat center;
+  border: none;
+  outline: none;
 }
-
-
-/*.container{
-  display: inline-flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  }
-}
-*/
 
 h4{
   font-family: 'Baloo Thambi', cursive;
