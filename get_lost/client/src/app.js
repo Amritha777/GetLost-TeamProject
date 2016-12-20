@@ -34,7 +34,7 @@ window.onload = function(){
     
     var cityDisplayButton = document.getElementById('city-button');
       cityDisplayButton.onclick = function(){
-      document.getElementById('city-name').scrollIntoView();
+      document.getElementById('city-title').scrollIntoView();
       changeCity();   
       hide();
       showDiv();

@@ -36,11 +36,11 @@ body{
   background:transparent no-repeat 0 0
 }
 
-/*#save-button{
+#save-button{
   border: none;
   outline: none;
-  background:transparent no-repeat 0 0;
-}*/
+  background:transparent no-repeat 0 0; 
+}
 
 h4{
   font-family: 'Baloo Thambi', cursive;
@@ -74,6 +74,19 @@ h4{
   border:15px solid #F0F8FF;
 }
 
+input[type="text"] {
+height: 50px;
+width: 200px;
+margin: 5;
+padding: 10;
+font-size: 16px;
+border: 1px solid #CCCCCC;
+}
 
-
+#places-button{
+  position: absolute;
+  border: none;
+  outline: none;
+  background:transparent no-repeat 0 0
+}
 
