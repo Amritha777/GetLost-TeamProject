@@ -66,33 +66,50 @@ saveCityList: function(url, callback){
 },
 
 initSave: function (){
+  var data;
   var localUrl = "http://localhost:3000/cities";
-
-  var test = function(){
-    console.log(this);
+  var cityNumber;
+  var refillMap = function(event){
+    cityNumber = event.target.id;
     this.clearMarkers();
+    this.googleMap = new google.maps.Map(document.getElementById('main-map'), {center: {lat: data[cityNumber].places[0].geometry.location.lat, lng: data[cityNumber].places[0].geometry.location.lng}, zoom: 14});
+
+    for(place of data[cityNumber].places){
+
+      new google.maps.Marker({
+         position: {lat: place.geometry.location.lat, lng: place.geometry.location.lng},
+         map: this.googleMap
+       });
+    }
+
+
+
+
+
+
+
   }.bind(this);
   var boomButton = document.getElementById('save-button')
   boomButton.onclick = function (){
     this.saveCityList(localUrl, function(response){
-      var data = JSON.parse(response);
+      data = JSON.parse(response);
       var todoDiv = document.getElementById('todo-list');
 
-      for(city of data){
+      for(var i = 0; i<data.length; i++){
         var todoLI = document.createElement('li');
-        todoLI.id ='city';
-        todoLI.innerText = city.name;
+        todoLI.class ='city';
+        todoLI.id = i;
+        todoLI.innerText = data[i].name;
         todoDiv.appendChild(todoLI);
         
-        todoLI.onclick = test;
+        todoLI.onclick = refillMap;
+        // todoLI.onclick = function(event){
+        //   cityNumber = event.target.id;
+        // }
       }        
     });
   }.bind(this);
 
-
-
-
-  //console.log(this);
 }
 }
 
