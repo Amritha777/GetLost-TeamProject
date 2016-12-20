@@ -62,24 +62,42 @@ MapWrapper.prototype = {
     var data = {name: document.getElementById('city-name').innerText, places: this.selectedPlaces};
     request.send(JSON.stringify(data));
     
-  console.log(this)
+  
   },
 
   initSave: function (){
     var localUrl = "http://localhost:3000/cities";
+
+  var test = function(){
+    console.log(this);
+    this.clearMarkers();
+  }.bind(this);
     var boomButton = document.getElementById('save-button')
     boomButton.onclick = function (){
       this.saveCityList(localUrl, function(response){
         var data = JSON.parse(response);
         var todoDiv = document.getElementById('todo-list');
 
+       
+
         for(city of data){
           var todoLI = document.createElement('li');
+          todoLI.id ='city';
           todoLI.innerText = city.name;
           todoDiv.appendChild(todoLI);
+          
+          todoLI.onclick = test;
         }
+
+
+       
+        
       });
     }.bind(this);
+
+
+
+
   //console.log(this);
   }
 }

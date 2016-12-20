@@ -10,7 +10,7 @@ var CityView = function(city){
 
 CityView.prototype = {
   render: function(){ 
-  console.log("click");
+  
 
       this.clearFunction();
 
