@@ -31,8 +31,15 @@
     
     <div>
     <input id="place-input" class="controls" type="text" placeholder=" Look for Places!">
-    <button id="places-button" type="submit"><img src="../img/search-48.png"/></button>
+    <button id="places-button" type="submit" onClick="clearText()"><img src="../img/search-48.png"/></button>
     </div>
+
+    <script type="text/javascript">
+
+    var clearText = function ()  {
+        document.getElementById('places-button').value = "";
+    }  
+    </script>
 
     <div id="">
       <h4>Places to visit:</h4>
@@ -51,7 +58,6 @@
       <p id="places"></p>
       <ul id="todo-list"></ul>
     </div>
-
 
 </body>
 </html>

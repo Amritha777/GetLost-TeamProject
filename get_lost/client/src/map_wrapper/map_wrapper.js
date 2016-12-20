@@ -89,7 +89,7 @@ initSave: function (){
 
     var newPlaces = document.getElementById('places-list');
     newPlaces.innerHTML = "";
-
+    
 
   }.bind(this);
 
