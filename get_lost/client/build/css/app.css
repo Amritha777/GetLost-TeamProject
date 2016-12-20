@@ -1,6 +1,7 @@
 body{
   display: flex;
   flex-direction: column;
+  background-color: #F0F8FF;
 }
 
 #container{
@@ -11,7 +12,7 @@ body{
 #wandering-list{
   display: none;
   flex-direction: row;
-  }
+}
 
 #city-button {
   display: block;
@@ -20,7 +21,7 @@ body{
   height: 1000px;
   border: none;
   outline: none;
-  background: transparent  no-repeat center;
+  background:transparent no-repeat 0 0;
 }
 
 #map-button {
@@ -35,40 +36,42 @@ body{
   background:transparent no-repeat 0 0
 }
 
-#save-button{
+/*#save-button{
   border: none;
   outline: none;
   background:transparent no-repeat 0 0;
-}
+}*/
 
 h4{
   font-family: 'Baloo Thambi', cursive;
-  font-size: 16pt;
+  font-size: 24pt; 
+  color: #5c87ab; 
 }
 
 #city-name{
   font-family: 'Baloo Thambi', cursive;
-  font-size: 25pt;
+  font-size: 40pt;
+  color: #5c87ab;
   margin: 5px;
 }
 
 #city-specs{
   font-family: 'Poiret One', cursive;
-  font-size: 14pt;
+  font-size: 18pt;
   margin: 5px;
 }
 
 #places-list{
   font-family: 'Poiret One', cursive;
-  font-size: 12pt;
+  font-size: 20pt;
   margin: 5px;
 }
 
 #main-map{
   float: left;
-  height: 600px;
+  height: 620px;
   width: 800px;
-  border:10px solid #ffffff;
+  border:15px solid #F0F8FF;
 }
 
 
