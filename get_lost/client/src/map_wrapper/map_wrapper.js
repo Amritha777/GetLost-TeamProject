@@ -69,7 +69,12 @@ MapWrapper.prototype = {
     var localUrl = "http://localhost:3000/cities";
     var boomButton = document.getElementById('save-button')
     boomButton.onclick = function (){
-      this.saveCityList(localUrl, function(response){console.log(response)});
+      this.saveCityList(localUrl, function(response){
+        var data = JSON.parse(response);
+        for(city of data){
+          console.log(city.name);
+        }
+      });
     }.bind(this);
   //console.log(this);
   }
