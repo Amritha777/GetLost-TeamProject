@@ -35,8 +35,11 @@ window.onload = function(){
     var cityDisplayButton = document.getElementById('city-button');
       cityDisplayButton.onclick = function(){
       document.getElementById('city-name').scrollIntoView();
-      changeCity();    
-
+      changeCity();   
+      hide();
+      showDiv();
+      showWanderings();
+  
 
       var mapDisplayButton = document.getElementById('map-button');
       mapDisplayButton.onclick = function(){
@@ -58,6 +61,21 @@ window.onload = function(){
       cityView.render(city); 
       mapView = new MapView(mapDiv, city, 6);
     }
+
+    var hide = function() {
+      var div = document.getElementById('city-button');
+        div.style.display = 'none';
+      } 
+
+     var showDiv = function() {
+        var containerDiv = document.getElementById('container')
+        containerDiv.style.display = "block";
+      }
+    
+    var showWanderings = function() {
+      var wanderingDiv = document.getElementById('wandering-list')
+        wanderingDiv.style.display = "block";
+       }
   }
 
   

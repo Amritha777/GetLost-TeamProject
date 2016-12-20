@@ -4,10 +4,14 @@ body{
 }
 
 #container{
-  display: flex;
+  display: none;
   flex-direction: row;
-
 }
+
+#wandering-list{
+  display: none;
+  flex-direction: row;
+  }
 
 #city-button {
   display: block;
@@ -17,8 +21,8 @@ body{
   border: none;
   outline: none;
   background: transparent  no-repeat center;
-
 }
+
 
 h4{
   font-family: 'Baloo Thambi', cursive;
@@ -46,7 +50,7 @@ h4{
 #main-map{
   float: left;
   height: 600px;
-  width: 600px;
+  width: 800px;
   border:10px solid #ffffff;
 }
 
