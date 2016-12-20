@@ -34,7 +34,7 @@ window.onload = function(){
     
     var cityDisplayButton = document.getElementById('city-button');
       cityDisplayButton.onclick = function(){
-      document.getElementById('main-map').scrollIntoView();
+      document.getElementById('city-name').scrollIntoView();
       changeCity();    
 
 

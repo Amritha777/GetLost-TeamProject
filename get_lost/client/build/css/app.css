@@ -1,8 +1,19 @@
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+#container{
+  display: flex;
+  flex-direction: row;
+
+}
+
 #city-button {
   display: block;
   margin: 0 auto;
   width: 600px;
-  height: 800px;
+  height: 600px;
   border: none;
   outline: none;
   background: transparent  no-repeat center;
@@ -34,7 +45,7 @@ h4{
 
 #main-map{
   float: left;
-  height: 400px;
+  height: 600px;
   width: 600px;
   border:10px solid #ffffff;
 }
