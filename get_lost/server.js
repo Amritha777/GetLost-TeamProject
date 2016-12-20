@@ -34,8 +34,13 @@ app.post('/cities', function(req, res){
       places: req.body.places
     }
     )
-    res.status(200).end();
-    db.close();
+    var collection = db.collection('cities');
+    collection.find({}).toArray(function(err, docs){
+      res.body = JSON.stringify(docs);
+      console.log(res.body);
+      res.status(200).end();
+      db.close();
+    })
   });
 });
 
