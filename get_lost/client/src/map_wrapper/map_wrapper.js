@@ -81,14 +81,18 @@ initSave: function (){
          map: this.googleMap
        });
     }
+    var newSpecs = document.getElementById('city-specs');
+    newSpecs.innerHTML = "";
 
+    var newTitle = document.getElementById('city-title');
+    newTitle.innerHTML = "";
 
-
-
-
+    var newPlaces = document.getElementById('places-list');
+    newPlaces.innerHTML = "";
 
 
   }.bind(this);
+
   var boomButton = document.getElementById('save-button')
   boomButton.onclick = function (){
     this.saveCityList(localUrl, function(response){
