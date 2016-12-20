@@ -55,9 +55,13 @@ MapWrapper.prototype = {
     var request = new XMLHttpRequest();
     request.open("POST", url);
     request.setRequestHeader('content-type', 'application/json');
-    request.onload = callback;
+    request.onload = function(){
+
+      callback(request.response);
+    };
     var data = {name: document.getElementById('city-name').innerText, places: this.selectedPlaces};
     request.send(JSON.stringify(data));
+    
   console.log(this)
   },
 
@@ -65,9 +69,14 @@ MapWrapper.prototype = {
     var localUrl = "http://localhost:3000/cities";
     var boomButton = document.getElementById('save-button')
     boomButton.onclick = function (){
-      this.saveCityList(localUrl, console.log())
+      this.saveCityList(localUrl, function(response){
+        var data = JSON.parse(response);
+        for(city of data){
+          console.log(city.name);
+        }
+      });
     }.bind(this);
-  console.log(this);
+  //console.log(this);
   }
 }
 
