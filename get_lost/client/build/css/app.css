@@ -1,5 +1,26 @@
+.header-logo {
+  display: block;
+  margin: 0 auto;
+  width: 800px;
+  height: 800px;
+  background: url(../img/GetLost_logo.png) no-repeat center;
+}
+
+
 #main-map{
     height: 400px;
     width: 600px;
   }
+
+#city-name{
+  font-family: 'Baloo Thambi', cursive;
+  font-size: 25pt;
+  margin: 5px;
 }
+
+#city-specs{
+  font-family: 'Poiret One', cursive;
+  font-size: 14pt;
+  margin: 5px;
+}
+
