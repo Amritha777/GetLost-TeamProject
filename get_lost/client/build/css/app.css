@@ -1,9 +1,10 @@
-.header-logo {
+#city-button {
   display: block;
   margin: 0 auto;
-  width: 800px;
-  height: 800px;
-  background: url(../img/GetLost_logo.png) no-repeat center;
+  width: 600px;
+  height: 600px;
+  border: none;
+  background: transparent  no-repeat center;
 }
 
 
