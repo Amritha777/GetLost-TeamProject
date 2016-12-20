@@ -1,32 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Get Lost</title>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-  <script src='bundle.js'></script>
-  <link rel="stylesheet" type="text/css" href="css/app.css">
-  <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Bevan|Poiret+One" rel="stylesheet">
-</head>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Get Lost</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src='bundle.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Bevan|Poiret+One" rel="stylesheet">
+  </head>
 
-<body>
 
-<header>
-<h1>
-  <a class="header-logo" href=""></a> 
-</h1>
-</header>
+  <header>
+    <h1>
+      <a class="header-logo" href=""></a> 
+    </h1>
+  </header>
 
-  <div>
-    <button id="city-button">Get Lost</button> 
-    <br>
-    <div id='main-map'></div>
-      <p id="city-name"></p>
-      <ul id="city-specs"></ul>
-    <br>
-    
+  <button id="city-button">Get Lost</button> 
+
+  <div id="text-layout">
+    <p id="city-name"></p>
+    <ul id="city-specs"></ul>
   </div>
-
+  <div id='main-map'></div>
+  
   <br>
+
   <button id="map-button">I'll Take it!</button>
   <br><br>
 
@@ -34,16 +32,17 @@
 
   <button id="places-button">Search Places</button>
 
-  <br><br>
-
-<br><br>
-<div id="">
+  <br>
+  
+  <div id="">
+  <h4>Places to visit:</h4>
     <p id="places"></p>
     <ul id="places-list"></ul>
   </div>
-<br><br>
+
+  <br><br>
+
   <button id="save-button">Boom! Save!</button>
 
   </body>
-
-</html>
+  </html>
