@@ -7,6 +7,19 @@
 }
 
 
+/*.container{
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  }
+}
+*/
+
+h4{
+  font-family: 'Baloo Thambi', cursive;
+  font-size: 16pt;
+}
+
 #city-name{
   font-family: 'Baloo Thambi', cursive;
   font-size: 25pt;
@@ -19,10 +32,19 @@
   margin: 5px;
 }
 
+#places-list{
+  font-family: 'Poiret One', cursive;
+  font-size: 12pt;
+  margin: 5px;
+}
+
 #main-map{
-  display: flex;
+  float: left;
   height: 400px;
   width: 600px;
+  border:10px solid #ffffff;
 }
+
+
 
 
