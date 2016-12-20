@@ -36,8 +36,9 @@ app.post('/cities', function(req, res){
     )
     var collection = db.collection('cities');
     collection.find({}).toArray(function(err, docs){
-      res.body = JSON.stringify(docs);
-      console.log(res.body);
+
+       res.write(JSON.stringify(docs));
+      //console.log(res.body);
       res.status(200).end();
       db.close();
     })
