@@ -74,6 +74,15 @@ initSave: function (){
     this.clearMarkers();
     this.googleMap = new google.maps.Map(document.getElementById('main-map'), {center: {lat: data[cityNumber].places[0].geometry.location.lat, lng: data[cityNumber].places[0].geometry.location.lng}, zoom: 14});
 
+    for(place of data[cityNumber].places){
+
+      new google.maps.Marker({
+         position: {lat: place.geometry.location.lat, lng: place.geometry.location.lng},
+         map: this.googleMap
+       });
+    }
+
+
 
 
 
