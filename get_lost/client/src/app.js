@@ -33,12 +33,11 @@ window.onload = function(){
     var countries = jsonString;
     
     var cityDisplayButton = document.getElementById('city-button');
-    cityDisplayButton.onclick = function(){
-      city = city1.getRandomCity(countries);
-      cityView.city = city;
-      cityView.render(city); 
+      cityDisplayButton.onclick = function(){
+      document.getElementById('main-map').scrollIntoView();
+      changeCity();    
 
-      mapView = new MapView(mapDiv, city, 6);
+
       var mapDisplayButton = document.getElementById('map-button');
       mapDisplayButton.onclick = function(){
         mapView.initMap();
@@ -48,12 +47,20 @@ window.onload = function(){
       placesButton.onclick = function(){
         mapView.getPlaces(fetchResults); 
       }
+
+      var tryAgain = document.getElementById('try-again');
+      tryAgain.onclick = changeCity;
     };
-
-    
-
-
+  
+    var changeCity = function(){
+      city = city1.getRandomCity(countries);
+      cityView.city = city;
+      cityView.render(city); 
+      mapView = new MapView(mapDiv, city, 6);
+    }
   }
+
+  
   
  makeRequest(cityUrl, cityComplete);
 }
