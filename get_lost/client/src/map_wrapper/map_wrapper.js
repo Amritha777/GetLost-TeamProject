@@ -106,8 +106,10 @@ initSave: function (){
         todoLI.onclick = refillMap;
       }
       showWanderings();
+      hideCity();
+      hideDiv();
       document.getElementById('wandering-list').scrollIntoView();
-              
+
     });
   }.bind(this);
   
@@ -115,6 +117,16 @@ initSave: function (){
     var wanderingDiv = document.getElementById('wandering-list')
       wanderingDiv.style.display = "block";
      }
+
+ var hideCity= function() {
+   var div = document.getElementById('city-title');
+     div.style.display = 'none';
+   } 
+
+ var hideDiv = function() {
+   var div = document.getElementById('container');
+     div.style.display = 'none';
+   } 
   }
 
   
