@@ -107,7 +107,7 @@ initSave: function (){
       }
       showWanderings();
       hideCity();
-      hideDiv();
+      // hideDiv();
       document.getElementById('wandering-list').scrollIntoView();
 
     });
