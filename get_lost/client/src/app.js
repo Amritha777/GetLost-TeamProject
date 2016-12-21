@@ -49,6 +49,7 @@ window.onload = function(){
       var placesButton = document.getElementById('places-button')
       placesButton.onclick = function(){
         mapView.getPlaces(fetchResults); 
+        
       }
 
       var tryAgain = document.getElementById('try-again');
