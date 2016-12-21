@@ -38,7 +38,6 @@ window.onload = function(){
       changeCity();   
       hide();
       showDiv();
-      showWanderings();
   
 
       var mapDisplayButton = document.getElementById('map-button');
@@ -72,11 +71,6 @@ window.onload = function(){
         var containerDiv = document.getElementById('container')
         containerDiv.style.display = "block";
       }
-    
-    var showWanderings = function() {
-      var wanderingDiv = document.getElementById('wandering-list')
-        wanderingDiv.style.display = "block";
-       }
   }
 
   

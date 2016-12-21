@@ -13,7 +13,6 @@ var MapWrapper = function(container, center, zoom){
 MapWrapper.prototype = {
 
  createMarker: function(place){
-
   var marker = new google.maps.Marker({
    position: {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()},
    map: this.googleMap
@@ -61,8 +60,6 @@ saveCityList: function(url, callback){
   };
   var data = {name: document.getElementById('city-name').innerText, places: this.selectedPlaces};
   request.send(JSON.stringify(data));
-  
-  
 },
 
 initSave: function (){
@@ -77,10 +74,11 @@ initSave: function (){
     for(place of data[cityNumber].places){
 
       new google.maps.Marker({
-         position: {lat: place.geometry.location.lat, lng: place.geometry.location.lng},
-         map: this.googleMap
-       });
+       position: {lat: place.geometry.location.lat, lng: place.geometry.location.lng},
+       map: this.googleMap
+     });
     }
+
     var newSpecs = document.getElementById('city-specs');
     newSpecs.innerHTML = "";
 
@@ -90,8 +88,6 @@ initSave: function (){
     var newPlaces = document.getElementById('places-list');
     newPlaces.innerHTML = "";
     this.addPlace(todoLI);
-    
-
   }.bind(this);
 
   var boomButton = document.getElementById('save-button')
@@ -108,14 +104,21 @@ initSave: function (){
         todoDiv.appendChild(todoLI);
         
         todoLI.onclick = refillMap;
-        // todoLI.onclick = function(event){
-        //   cityNumber = event.target.id;
-        // }
-      }        
+      }
+      showWanderings();
+      document.getElementById('wandering-list').scrollIntoView();
+              
     });
   }.bind(this);
+  
+  var showWanderings = function() {
+    var wanderingDiv = document.getElementById('wandering-list')
+      wanderingDiv.style.display = "block";
+     }
+  }
 
-}
+  
+
 }
 
 module.exports = MapWrapper;
