@@ -64,7 +64,6 @@ h4{
 #places-list{
   font-family: 'Poiret One', cursive;
   font-size: 20pt;
-  margin: 5px;
 }
 
 #main-map{
@@ -90,3 +89,7 @@ border: 1px solid #CCCCCC;
   background:transparent no-repeat 0 0
 }
 
+#todo-list{
+  font-family: 'Poiret One', cursive;
+  font-size: 20pt;
+}
