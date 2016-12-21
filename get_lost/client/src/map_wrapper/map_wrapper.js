@@ -87,7 +87,7 @@ initSave: function (){
 
     var newPlaces = document.getElementById('places-list');
     newPlaces.innerHTML = "";
-    this.addPlace(todoLI);
+
   }.bind(this);
 
   var boomButton = document.getElementById('save-button')
