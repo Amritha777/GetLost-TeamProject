@@ -4,15 +4,55 @@ body{
   background-color: #F0F8FF;
 }
 
+h4{
+  font-family: 'Baloo Thambi', cursive;
+  font-size: 24pt; 
+  color: #5c87ab; 
+}
+
 #container{
   display: none;
   flex-direction: row;
 }
 
+#main-map{
+  float: left;
+  height: 620px;
+  width: 800px;
+  border:15px solid #F0F8FF;
+}
+
+/*LIST VIEWS*/
+
 #wandering-list{
   display: none;
   flex-direction: row;
 }
+
+#todo-list{
+  font-family: 'Poiret One', cursive;
+  font-size: 20pt;
+}
+
+#places-list{
+  font-family: 'Poiret One', cursive;
+  font-size: 20pt;
+}
+
+#city-name{
+  font-family: 'Baloo Thambi', cursive;
+  font-size: 40pt;
+  color: #5c87ab;
+  margin: 5px;
+}
+
+#city-specs{
+  font-family: 'Poiret One', cursive;
+  font-size: 18pt;
+  margin: 5px;
+}
+
+/*BUTTONS*/
 
 #city-button {
   display: block;
@@ -42,37 +82,6 @@ body{
   background:transparent no-repeat 0 0; 
 }
 
-h4{
-  font-family: 'Baloo Thambi', cursive;
-  font-size: 24pt; 
-  color: #5c87ab; 
-}
-
-#city-name{
-  font-family: 'Baloo Thambi', cursive;
-  font-size: 40pt;
-  color: #5c87ab;
-  margin: 5px;
-}
-
-#city-specs{
-  font-family: 'Poiret One', cursive;
-  font-size: 18pt;
-  margin: 5px;
-}
-
-#places-list{
-  font-family: 'Poiret One', cursive;
-  font-size: 20pt;
-}
-
-#main-map{
-  float: left;
-  height: 620px;
-  width: 800px;
-  border:15px solid #F0F8FF;
-}
-
 input[type="text"] {
 height: 50px;
 width: 200px;
@@ -89,7 +98,4 @@ border: 1px solid #CCCCCC;
   background:transparent no-repeat 0 0
 }
 
-#todo-list{
-  font-family: 'Poiret One', cursive;
-  font-size: 20pt;
-}
+

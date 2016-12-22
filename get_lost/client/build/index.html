@@ -1,63 +1,52 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
-  <head>
-    <title>Get Lost</title>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-    <script src='bundle.js'></script>
-    <link rel="stylesheet" type="text/css" href="css/app.css">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Bevan|Poiret+One" rel="stylesheet">
-  </head>
+    <head>
+      <title>Get Lost</title>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+      <script src='bundle.js'></script>
+      <link rel="stylesheet" type="text/css" href="css/app.css">
+      <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Bevan|Poiret+One" rel="stylesheet">
+    </head>
 
-<body>
- 
- <div>
-    <button " id="city-button" type="submit"><img src="../img/getLost.png" /></button>
+  <body>
+    <div>
+        <button " id="city-button" type="submit"><img src="../img/getLost.png" /></button>
+      </div>
+
+      <div id="city-title">
+        <p id="city-name"></p>
+        <ul id="city-specs"></ul>
+      </div>
+
+      <div id="container">
+      <div id='main-map'></div>
+
+      <div>
+        <br><br>
+        <button id="map-button" type="submit"><img src="../img/smiley_glasses.png"/></button>
+        <button id="try-again" type="submit"><img src="../img/smiley_neutral_face.png"/></button> 
+        <br><br><br><br>
+
+      <div>
+        <input id="place-input" class="controls" type="text" placeholder=" Look for Places!">
+        <button id="places-button" type="submit" onClick="clearText();" ><img src="../img/search-48.png"/></button>
+      </div>
+
+      <div id="">
+        <h4>Places to visit:</h4>
+        <p id="places"></p>
+        <ul id="places-list"></ul>
+      </div><br>
+
+      <button id="save-button" type="submit"><img src="../img/compose.png"/></button>
+      </div>
+    </div>
+
+  <div id="wandering-list">
+    <h4>Wanderings</h4>
+    <p id="places"></p>
+    <ul id="todo-list"></ul>
   </div>
-   
-  <div id="city-title">
 
-    <p id="city-name"></p>
-    <ul id="city-specs"></ul>
-</div>
-
-  <div id="container">
-    <div id='main-map'></div>
-  
-    <div>
-    <br><br>
-    <button id="map-button" type="submit"><img src="../img/smiley_glasses.png"/></button>
-    <button id="try-again" type="submit"><img src="../img/smiley_neutral_face.png"/></button> 
-    <br><br><br><br>
-    
-    <div>
-    <input id="place-input" class="controls" type="text" placeholder=" Look for Places!">
-    <button id="places-button" type="submit" onClick="clearText();" ><img src="../img/search-48.png"/></button>
-    </div>
-
-    <script type="text/javascript">
-
-    var clearText = function ()  {
-        document.getElementById('place-input').innerText = "";
-    }  
-    </script>
-
-    <div id="">
-      <h4>Places to visit:</h4>
-      <p id="places"></p>
-      <ul id="places-list"></ul>
-    </div>
-
-    <br>
-    <button id="save-button" type="submit"><img src="../img/compose.png"/></button>
-    </div>
-    </div>
-
-
-    <div id="wandering-list">
-      <h4>Wanderings</h4>
-      <p id="places"></p>
-      <ul id="todo-list"></ul>
-    </div>
-
-</body>
+  </body>
 </html>
