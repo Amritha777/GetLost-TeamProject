@@ -1,6 +1,5 @@
 var City = require('../city/city');
 var assert = require('assert');
-
 var city1;
 
 describe('city', function() {

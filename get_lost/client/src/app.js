@@ -6,6 +6,7 @@ var ListView = require('./views/lists_view');
 
 
 window.onload = function(){
+  
   var city1 = new CityTools();
   var imageView = new ImageView();
   var mapDiv = document.getElementById('main-map');
@@ -38,7 +39,6 @@ window.onload = function(){
       changeCity();   
       hide();
       showDiv();
-  
 
       var mapDisplayButton = document.getElementById('map-button');
       mapDisplayButton.onclick = function(){
@@ -48,35 +48,28 @@ window.onload = function(){
       var placesButton = document.getElementById('places-button')
       placesButton.onclick = function(){
         mapView.getPlaces(fetchResults); 
-        
       }
 
       var tryAgain = document.getElementById('try-again');
       tryAgain.onclick = changeCity;
-    };
+      };
   
     var changeCity = function(){
       city = city1.getRandomCity(countries);
       cityView.city = city;
       cityView.render(city); 
       mapView = new MapView(mapDiv, city, 6);
-    }
+    };
 
     var hide = function() {
       var div = document.getElementById('city-button');
-        div.style.display = 'none';
-      } 
+      div.style.display = 'none';
+    }; 
 
-     var showDiv = function() {
-        var containerDiv = document.getElementById('container')
-        containerDiv.style.display = "block";
-      }
-  }
-
-  
-  
- makeRequest(cityUrl, cityComplete);
+    var showDiv = function() {
+      var containerDiv = document.getElementById('container')
+      containerDiv.style.display = "block";
+    };
+  }  
+  makeRequest(cityUrl, cityComplete);
 }
-
-
-      // imageView.getImageByName(displayImage, city);

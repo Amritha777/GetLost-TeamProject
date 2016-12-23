@@ -3,7 +3,7 @@ var mapWrapper = require('../map_wrapper/map_wrapper');
 
 var ListView = function() {
     this.places;
-  };
+};
 
 ListView.prototype = {
 
@@ -16,4 +16,4 @@ ListView.prototype = {
   },
 };
 
-  module.exports = ListView;
+module.exports = ListView;

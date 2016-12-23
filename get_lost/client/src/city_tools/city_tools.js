@@ -1,8 +1,4 @@
-var CityTools = function() {
-  // this.name = name;
-  // this.language = language;
-  // this.currency = currency;
-  // this.coordinates = coordinates;
+var CityTools = function(){
 };
 
 CityTools.prototype = {
@@ -15,10 +11,9 @@ CityTools.prototype = {
       country: countries[randomNumber].name,
       currency: countries[randomNumber].currencies
     }
-    return randomCity;  
+  return randomCity;  
   }
-
-}
+};
 
 module.exports = CityTools;
 
