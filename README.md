@@ -1,4 +1,4 @@
-Original JavaScript Project Specs:
+# Original JavaScript Project Specs:
 Trip Planner (Trippi)
 
 You are required to build a day trip planner using Google Maps API and Google Places API. Users should be able to find out about interesting places or events near to where they're planning to go and save the ones they like most into an itinerary.
@@ -10,7 +10,7 @@ MVP
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-Team JavaScript Project Specs:
+# Team JavaScript Project Specs:
 Get Lost
 
 A helpful website for the indecisve traveller who is unsure of what his next holiday will be.
