@@ -13,7 +13,7 @@ MVP
 # Team JavaScript Project Specs:
 Get Lost
 
-A helpful website for the indecisve traveller who is unsure of what his next holiday will be.
+A helpful website for the indecisive traveller who is unsure of what his next holiday destination will be.
 
 MVP
 - Randomised selection of a city
