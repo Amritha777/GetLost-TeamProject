@@ -20,3 +20,12 @@ MVP
 - User selects current city or chooses another city
 - Be able to search for local places of interest
 - create an list of places they wish to visit during their trip
+
+
+Further functionality could include...
+
+- Warnings about destinations (natural disasters / current conflicts)
+- Display current city weather
+- Random city filter (by time available / travel preferences / cost)
+- Share trip with other users
+- Rate trips and palces
